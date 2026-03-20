@@ -1,0 +1,2880 @@
+{
+  "version": "0.1",
+  "n_tridoms": 78,
+  "atlas": [
+    {
+      "id": "01E.12E.20E",
+      "n_edges": 3,
+      "n_excit": 3,
+      "n_inhib": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "1,2": 1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.12E.20I",
+      "n_edges": 3,
+      "n_excit": 2,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "1,2": 1,
+        "2,0": -1
+      },
+      "regime_l2": "chaos",
+      "description": "Sensibilité aux conditions initiales. Potentiel pour l'exploration.",
+      "example_use": "Exploration stochastique, diversification, générateur de variabilité."
+    },
+    {
+      "id": "01E.12I.20I",
+      "n_edges": 3,
+      "n_excit": 1,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "1,2": -1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.12I.20I",
+      "n_edges": 3,
+      "n_excit": 0,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "1,2": -1,
+        "2,0": -1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01E.02E.10E.20E",
+      "n_edges": 4,
+      "n_excit": 4,
+      "n_inhib": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10E.20I",
+      "n_edges": 4,
+      "n_excit": 3,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10I.20I",
+      "n_edges": 4,
+      "n_excit": 2,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": -1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10E.20E",
+      "n_edges": 4,
+      "n_excit": 3,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": 1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10E.20I",
+      "n_edges": 4,
+      "n_excit": 2,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": 1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10I.20E",
+      "n_edges": 4,
+      "n_excit": 2,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": -1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10I.20I",
+      "n_edges": 4,
+      "n_excit": 1,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": -1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02I.10E.20E",
+      "n_edges": 4,
+      "n_excit": 2,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": 1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02I.10E.20I",
+      "n_edges": 4,
+      "n_excit": 1,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": 1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02I.10I.20I",
+      "n_edges": 4,
+      "n_excit": 0,
+      "n_inhib": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": -1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10E.21E",
+      "n_edges": 4,
+      "n_excit": 4,
+      "n_inhib": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "2,1": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10E.21I",
+      "n_edges": 4,
+      "n_excit": 3,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "2,1": -1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01E.02E.10I.21E",
+      "n_edges": 4,
+      "n_excit": 3,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": -1,
+        "2,1": 1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01E.02E.10I.21I",
+      "n_edges": 4,
+      "n_excit": 2,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": -1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10E.21E",
+      "n_edges": 4,
+      "n_excit": 3,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": 1,
+        "2,1": 1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01E.02I.10E.21I",
+      "n_edges": 4,
+      "n_excit": 2,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": 1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10I.21E",
+      "n_edges": 4,
+      "n_excit": 2,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": -1,
+        "2,1": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10I.21I",
+      "n_edges": 4,
+      "n_excit": 1,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": -1,
+        "2,1": -1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01I.02E.10E.21E",
+      "n_edges": 4,
+      "n_excit": 3,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": 1,
+        "1,0": 1,
+        "2,1": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02E.10E.21I",
+      "n_edges": 4,
+      "n_excit": 2,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": 1,
+        "1,0": 1,
+        "2,1": -1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01I.02E.10I.21E",
+      "n_edges": 4,
+      "n_excit": 2,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": 1,
+        "1,0": -1,
+        "2,1": 1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01I.02E.10I.21I",
+      "n_edges": 4,
+      "n_excit": 1,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": 1,
+        "1,0": -1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02I.10E.21E",
+      "n_edges": 4,
+      "n_excit": 2,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": 1,
+        "2,1": 1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01I.02I.10E.21I",
+      "n_edges": 4,
+      "n_excit": 1,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": 1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02I.10I.21E",
+      "n_edges": 4,
+      "n_excit": 1,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": -1,
+        "2,1": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02I.10I.21I",
+      "n_edges": 4,
+      "n_excit": 0,
+      "n_inhib": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": -1,
+        "2,1": -1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01E.02E.10E.12E.20E",
+      "n_edges": 5,
+      "n_excit": 5,
+      "n_inhib": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": 1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10E.12E.20I",
+      "n_edges": 5,
+      "n_excit": 4,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": 1,
+        "2,0": -1
+      },
+      "regime_l2": "chaos",
+      "description": "Sensibilité aux conditions initiales. Potentiel pour l'exploration.",
+      "example_use": "Exploration stochastique, diversification, générateur de variabilité."
+    },
+    {
+      "id": "01E.02E.10E.12I.20E",
+      "n_edges": 5,
+      "n_excit": 4,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10E.12I.20I",
+      "n_edges": 5,
+      "n_excit": 3,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10I.12E.20E",
+      "n_edges": 5,
+      "n_excit": 4,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": -1,
+        "1,2": 1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10I.12E.20I",
+      "n_edges": 5,
+      "n_excit": 3,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": -1,
+        "1,2": 1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10I.12I.20E",
+      "n_edges": 5,
+      "n_excit": 3,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": -1,
+        "1,2": -1,
+        "2,0": 1
+      },
+      "regime_l2": "chaos",
+      "description": "Sensibilité aux conditions initiales. Potentiel pour l'exploration.",
+      "example_use": "Exploration stochastique, diversification, générateur de variabilité."
+    },
+    {
+      "id": "01E.02E.10I.12I.20I",
+      "n_edges": 5,
+      "n_excit": 2,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": -1,
+        "1,2": -1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10E.12E.20E",
+      "n_edges": 5,
+      "n_excit": 4,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": 1,
+        "1,2": 1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10E.12E.20I",
+      "n_edges": 5,
+      "n_excit": 3,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": 1,
+        "1,2": 1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10E.12I.20E",
+      "n_edges": 5,
+      "n_excit": 3,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": 1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01E.02I.10E.12I.20I",
+      "n_edges": 5,
+      "n_excit": 2,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10I.12E.20E",
+      "n_edges": 5,
+      "n_excit": 3,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": 1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10I.12E.20I",
+      "n_edges": 5,
+      "n_excit": 2,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": 1,
+        "2,0": -1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01E.02I.10I.12I.20E",
+      "n_edges": 5,
+      "n_excit": 2,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": -1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10I.12I.20I",
+      "n_edges": 5,
+      "n_excit": 1,
+      "n_inhib": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": -1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02E.10E.12E.20E",
+      "n_edges": 5,
+      "n_excit": 4,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": 1,
+        "2,0": 1
+      },
+      "regime_l2": "chaos",
+      "description": "Sensibilité aux conditions initiales. Potentiel pour l'exploration.",
+      "example_use": "Exploration stochastique, diversification, générateur de variabilité."
+    },
+    {
+      "id": "01I.02E.10E.12E.20I",
+      "n_edges": 5,
+      "n_excit": 3,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": 1,
+        "2,0": -1
+      },
+      "regime_l2": "chaos",
+      "description": "Sensibilité aux conditions initiales. Potentiel pour l'exploration.",
+      "example_use": "Exploration stochastique, diversification, générateur de variabilité."
+    },
+    {
+      "id": "01I.02E.10E.12I.20E",
+      "n_edges": 5,
+      "n_excit": 3,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02E.10E.12I.20I",
+      "n_edges": 5,
+      "n_excit": 2,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02E.10I.12E.20E",
+      "n_edges": 5,
+      "n_excit": 3,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": 1,
+        "1,0": -1,
+        "1,2": 1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02E.10I.12E.20I",
+      "n_edges": 5,
+      "n_excit": 2,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": 1,
+        "1,0": -1,
+        "1,2": 1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02E.10I.12I.20E",
+      "n_edges": 5,
+      "n_excit": 2,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": 1,
+        "1,0": -1,
+        "1,2": -1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02E.10I.12I.20I",
+      "n_edges": 5,
+      "n_excit": 1,
+      "n_inhib": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": 1,
+        "1,0": -1,
+        "1,2": -1,
+        "2,0": -1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01I.02I.10E.12E.20E",
+      "n_edges": 5,
+      "n_excit": 3,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": 1,
+        "1,2": 1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02I.10E.12E.20I",
+      "n_edges": 5,
+      "n_excit": 2,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": 1,
+        "1,2": 1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02I.10E.12I.20E",
+      "n_edges": 5,
+      "n_excit": 2,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02I.10E.12I.20I",
+      "n_edges": 5,
+      "n_excit": 1,
+      "n_inhib": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": -1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01I.02I.10I.12E.20E",
+      "n_edges": 5,
+      "n_excit": 2,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": 1,
+        "2,0": 1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01I.02I.10I.12E.20I",
+      "n_edges": 5,
+      "n_excit": 1,
+      "n_inhib": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": 1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02I.10I.12I.20E",
+      "n_edges": 5,
+      "n_excit": 1,
+      "n_inhib": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": -1,
+        "2,0": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02I.10I.12I.20I",
+      "n_edges": 5,
+      "n_excit": 0,
+      "n_inhib": 5,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": -1,
+        "2,0": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10E.12E.20E.21E",
+      "n_edges": 6,
+      "n_excit": 6,
+      "n_inhib": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": 1,
+        "2,0": 1,
+        "2,1": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10E.12E.20E.21I",
+      "n_edges": 6,
+      "n_excit": 5,
+      "n_inhib": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": 1,
+        "2,0": 1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10E.12E.20I.21I",
+      "n_edges": 6,
+      "n_excit": 4,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": 1,
+        "2,0": -1,
+        "2,1": -1
+      },
+      "regime_l2": "chaos",
+      "description": "Sensibilité aux conditions initiales. Potentiel pour l'exploration.",
+      "example_use": "Exploration stochastique, diversification, générateur de variabilité."
+    },
+    {
+      "id": "01E.02E.10E.12I.20E.21I",
+      "n_edges": 6,
+      "n_excit": 4,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": 1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10E.12I.20I.21E",
+      "n_edges": 6,
+      "n_excit": 4,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": -1,
+        "2,1": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10E.12I.20I.21I",
+      "n_edges": 6,
+      "n_excit": 3,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": -1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10I.12E.20I.21E",
+      "n_edges": 6,
+      "n_excit": 4,
+      "n_inhib": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": -1,
+        "1,2": 1,
+        "2,0": -1,
+        "2,1": 1
+      },
+      "regime_l2": "chaos",
+      "description": "Sensibilité aux conditions initiales. Potentiel pour l'exploration.",
+      "example_use": "Exploration stochastique, diversification, générateur de variabilité."
+    },
+    {
+      "id": "01E.02E.10I.12E.20I.21I",
+      "n_edges": 6,
+      "n_excit": 3,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": -1,
+        "1,2": 1,
+        "2,0": -1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02E.10I.12I.20I.21I",
+      "n_edges": 6,
+      "n_excit": 2,
+      "n_inhib": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": 1,
+        "1,0": -1,
+        "1,2": -1,
+        "2,0": -1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10E.12I.20E.21I",
+      "n_edges": 6,
+      "n_excit": 3,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": 1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10E.12I.20I.21I",
+      "n_edges": 6,
+      "n_excit": 2,
+      "n_inhib": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": 1,
+        "1,2": -1,
+        "2,0": -1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10I.12E.20E.21I",
+      "n_edges": 6,
+      "n_excit": 3,
+      "n_inhib": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": 1,
+        "2,0": 1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10I.12E.20I.21I",
+      "n_edges": 6,
+      "n_excit": 2,
+      "n_inhib": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": 1,
+        "2,0": -1,
+        "2,1": -1
+      },
+      "regime_l2": "oscillant",
+      "description": "Cycle limite stable. Idéal pour les rythmes internes et le timing.",
+      "example_use": "Horloge interne, CPG (Central Pattern Generator), rythmes."
+    },
+    {
+      "id": "01E.02I.10I.12I.20I.21E",
+      "n_edges": 6,
+      "n_excit": 2,
+      "n_inhib": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": -1,
+        "2,0": -1,
+        "2,1": 1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01E.02I.10I.12I.20I.21I",
+      "n_edges": 6,
+      "n_excit": 1,
+      "n_inhib": 5,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": 1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": -1,
+        "2,0": -1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    },
+    {
+      "id": "01I.02I.10I.12I.20I.21I",
+      "n_edges": 6,
+      "n_excit": 0,
+      "n_inhib": 6,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "signs": {
+        "0,1": -1,
+        "0,2": -1,
+        "1,0": -1,
+        "1,2": -1,
+        "2,0": -1,
+        "2,1": -1
+      },
+      "regime_l2": "mono-stable",
+      "description": "Converge vers un unique point fixe. Adapté à la régulation simple.",
+      "example_use": "Contrôle, régulation, filtre passe-bas."
+    }
+  ]
+}
