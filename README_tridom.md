@@ -1,12 +1,10 @@
 # Tridom — A Minimal Causal Unit for Substrate-Invariant Network Dynamics
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19130439.svg)](https://doi.org/10.5281/zenodo.19130439)
-
 **Version:** 0.4 — 2026-03-20  
 **Author:** Jean-Paul Faihy  
 **Location:** Saujon, Nouvelle-Aquitaine, FR  
 **License:** MIT  
-**DOI:** `10.5281/zenodo.19130439`
+**DOI (placeholder):** `10.5281/zenodo.19130439`
 
 ---
 
