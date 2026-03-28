@@ -9,8 +9,17 @@ N_REPEAT = 10 par configuration
 import torch
 import numpy as np
 import itertools
+import json
+import csv
+import os
 from dataclasses import dataclass, field
 from typing import List, Dict
+
+# ─── Reproductibilité ─────────────────────────────────────────────────────────
+SEED = 42
+torch.manual_seed(SEED)
+np.random.seed(SEED)
+print(f"[REPRODUCIBILITY] Seed fixée : {SEED}")
 
 # ─── Environnements ────────────────────────────────────────────────────────────
 
@@ -218,8 +227,6 @@ print(f"\n→ Configuration recommandée : eta={top_key[0]:.0e}, w_decay={top_ke
       f"(N3D vainqueur sur {top_wins}/{top_tot} délais)")
 
 # ─── Export CSV ───────────────────────────────────────────────────────────────
-import csv, os
-
 csv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "test009_calibration.csv")
 with open(csv_path, "w", newline="") as f:
     w = csv.writer(f)
@@ -227,6 +234,22 @@ with open(csv_path, "w", newline="") as f:
     for r in results:
         w.writerow([r.eta, r.w_decay, r.delay, f"{r.r_n1d:.4f}", f"{r.r_n2d:.4f}",
                     f"{r.r_n3d:.4f}", r.winner, r.hierarchy_ok])
+
+print(f"\n[EXPORT] CSV → {csv_path}")
+
+# ─── Export config de reproductibilité ─────────────────────────────────────────
+config = {
+    "seed": SEED,
+    "eta_grid": ETA_GRID,
+    "wdecay_grid": WDECAY_GRID,
+    "delays": DELAYS,
+    "n_repeat": N_REPEAT,
+    "total_configurations": total,
+}
+config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "test009_config.json")
+with open(config_path, "w") as f:
+    json.dump(config, f, indent=2)
+print(f"[EXPORT] Config → {config_path}")
 
 print(f"\nRésultats exportés → {csv_path}")
 print("Ajouter au journal : TEST_009 dans TRIDOM_TESTS_LOG.md\n")

@@ -16,7 +16,7 @@ We introduce Tridom, a formal unit defined as a strongly connected directed grap
 on three nodes endowed with a binary signed coupling structure (excitatory /
 inhibitory) and a qualitative dynamical equivalence class. We prove that the triadic
 level constitutes a minimal threshold at which all non-trivial dynamical families —
-multi-stability, oscillation, and minimal chaos — become generically accessible (the
+multi-stability, oscillation, and minimal chaos — become accessible (the
 Triadic Threshold Hypothesis). We further show that the binary sign pattern (topology
 + E/I labelling) is structurally substrate-invariant at the L1 level: it is preserved across biological, digital, and
 logical implementations. We provide: (i) a formal three-level equivalence hierarchy
@@ -201,7 +201,7 @@ minimal complete grain
 
 Corollary (conjectural).  n  =  3  is  the  smallest  integer  at  which  substrate-invariant  non-trivial  causal
 organisation  becomes  possible  in  the  strong  sense:  there  exist  signed  triadic  topologies
-admitting  each  dynamical  family  generically,  enabling  the  signed  structure  to  preserve  its
+admitting each dynamical family under suitable realizations,  enabling  the  signed  structure  to  preserve  its
 qualitative regime under substrate change.
 
 Evidence sketch. The n = 1 and n = 2 cases follow directly from the Thomas–Kaufman conditions2:
@@ -644,7 +644,7 @@ next step.
 We have introduced Tridom as a formal candidate causal unit with a structurally substrate-invariant L1 core defined by a triple (G,
 σ,  [f]):  signed  strongly  connected  graph  on  3  nodes,  binary  excitatory  /  inhibitory  edge
 labelling, and dynamical equivalence class. The Triadic Threshold Hypothesis supports the view that n
-=  3  is  the  minimal  grain  at  which  all  non-trivial  dynamical  families  become  generically
+=  3  is  the  minimal  grain  at  which  all  non-trivial  dynamical  families  become
 accessible. The atlas of 78 canonical topologies, the calibrated PyTorch implementation, and
 the TGS v2 self-organising system with endogenous lifecycle provide a complete open-source
 platform for further investigation.
