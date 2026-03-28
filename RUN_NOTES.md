@@ -12,7 +12,7 @@
 | `tridom_atlas.py` | `tridom_atlas.json` | JSON |
 | `test_tridom_calibration.py` | `test009_calibration.csv` | CSV |
 | `test_tridom_calibration.py` | `test009_config.json` | JSON (config de reproductibilité) |
-| `tridom_tgs_v2.py` | Console (à persister) | — |
+| `tridom_tgs_v2.py` | `tgs_v2_results.json` | JSON (status + event_log + snapshots) |
 
 ## Dépendances
 ```
