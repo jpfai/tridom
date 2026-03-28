@@ -14,9 +14,9 @@ Abstract
 
 We introduce Tridom, a formal unit defined as a strongly connected directed graph
 on three nodes endowed with a binary signed coupling structure (excitatory /
-inhibitory) and a qualitative dynamical equivalence class. We prove that the triadic
+inhibitory) and a qualitative dynamical equivalence class. We formulate and support the hypothesis that the triadic
 level constitutes a minimal threshold at which all non-trivial dynamical families —
-multi-stability, oscillation, and minimal chaos — become accessible (the
+multi-stability, oscillation, and minimal chaos candidates — become accessible (the
 Triadic Threshold Hypothesis). We further show that the binary sign pattern (topology
 + E/I labelling) is structurally substrate-invariant at the L1 level: it is preserved across biological, digital, and
 logical implementations. We provide: (i) a formal three-level equivalence hierarchy
@@ -196,7 +196,7 @@ All families: monostability,
 multistability, oscillation, minimal
 chaos
 
-Generically stable under parameter perturbation —
+Stable under parameter perturbation —
 minimal complete grain
 
 Corollary (conjectural).  n  =  3  is  the  smallest  integer  at  which  substrate-invariant  non-trivial  causal
@@ -391,7 +391,7 @@ Signed triadic loop
 A->B->C->A
 
 Full palette: monostability, multistability,
-oscillation, minimal chaos
+oscillation, chaotic candidates
 
 7. Experimental Results
 
