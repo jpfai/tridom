@@ -1,4 +1,4 @@
-# Tridom — A Minimal Causal Unit for Substrate-Invariant Network Dynamics
+# Tridom — A Minimal Signed Triadic Unit for Substrate-Aware Network Dynamics
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19130439.svg)](https://doi.org/10.5281/zenodo.19130439)
 
@@ -12,7 +12,7 @@
 
 ## Abstract
 
-We introduce **Tridom**, a conceptual and formal unit defined as a strongly connected directed graph on three nodes, endowed with a signed coupling structure (excitatory/inhibitory) and a qualitative dynamical class. Drawing on the network motif literature and on the theory of feedback circuits, we argue that the triadic level constitutes a **minimal grain** at which non-trivial causal organization — multi-stability, oscillation, minimal chaos — becomes generically possible. We further show that this grain is **substrate-invariant**: the binary sign pattern of couplings (topology + E/I labels) is preserved across biological, digital, and logical implementations. This repository provides the formal specification, an enumerated atlas of 78 canonical signed triad topologies classified by dynamical regime, a PyTorch reference implementation with local Hebbian plasticity, and a self-organizing multi-agent system (TridomGroupSystem / Nona²) with endogenous birth and death.
+We introduce **Tridom**, a conceptual and formal unit defined as a strongly connected directed graph on three nodes, endowed with a signed coupling structure (excitatory/inhibitory) and a qualitative dynamical class. Drawing on the network motif literature and on the theory of feedback circuits, we formulate and support the hypothesis that the triadic level constitutes a **minimal grain** at which non-trivial causal organization — multi-stability, oscillation, minimal chaos — becomes generically possible. We further show that this grain is **substrate-invariant at L1** (topology + sign pattern only): the binary sign pattern of couplings is preserved across biological, digital, and logical implementations. This repository provides the formal specification, an enumerated atlas of 78 canonical signed triad topologies classified by dynamical regime, a PyTorch reference implementation with local Hebbian plasticity, and a self-organizing multi-agent system (TridomGroupSystem / Nona²) with endogenous birth and death within an explicit rule scaffold.
 
 ---
 
@@ -20,7 +20,7 @@ We introduce **Tridom**, a conceptual and formal unit defined as a strongly conn
 
 1. [Concept](#1-concept)
 2. [Formal Definition](#2-formal-definition)
-3. [The Triadic Threshold Theorem](#3-the-triadic-threshold-theorem)
+3. [The Triadic Threshold Hypothesis](#3-the-triadic-threshold-hypothesis)
 4. [Atlas of 78 Canonical Topologies](#4-atlas-of-78-canonical-topologies)
 5. [Reference Implementation (PyTorch)](#5-reference-implementation-pytorch)
 6. [Experimental Results](#6-experimental-results)
@@ -63,7 +63,7 @@ A **Tridom** is a triple **(G, σ, [f])** where:
 
 ---
 
-## 3. The Triadic Threshold Theorem
+## 3. The Triadic Threshold Hypothesis
 
 *Based on Thomas–Kaufman structural conditions (Thomas & Kaufman, 2001) and Soulé's proof of the positive circuit condition (Soulé, 2003), with constructive ODE examples.*
 
@@ -73,9 +73,9 @@ For any strongly connected signed directed graph G on n nodes:
 |---|---------------------|--------|
 | **1** | Mono-stability only | No relational structure |
 | **2** | Mono- or bi-stability | No generic periodic oscillation or chaos |
-| **3** | All families: mono-, multi-stability, oscillation, minimal chaos | **Generically** (stable under parameter perturbation) |
+| **3** | All families: mono-, multi-stability, oscillation, minimal chaos | **Under suitable realizations** (stable under parameter perturbation) |
 
-**Corollary:** n = 3 is the smallest integer at which substrate-invariant non-trivial causal organization becomes possible in the strong sense.
+**Corollary (supported hypothesis):** n = 3 is the smallest integer at which substrate-invariant non-trivial causal organization becomes possible in the strong sense.<!-- TODO: verify strength of "supported" vs "conjecture" once formal proof is complete -->
 
 ---
 
@@ -89,17 +89,19 @@ Exhaustive enumeration of strongly connected signed directed graphs on 3 nodes (
 |--------|-------|---|
 | Mono-stable | 56 | 71.8% |
 | Oscillating | 15 | 19.2% |
-| Chaos | 7 | 9.0% |
+| Chaotic candidates | 7 | 9.0% |
 | **Total** | **78** | 100% |
+
+> **Note:** The dynamical classification is protocol-relative: ODE integration with tanh nonlinearity, 8 random initial conditions, 500 time steps. Different protocols may yield different regime assignments.<!-- TODO: confirm step count matches actual simulation parameters -->
 
 ### Key examples
 
 | Topology ID | Arcs | E | I | Regime | Typical use |
 |-------------|------|---|---|--------|-------------|
 | `01I.12I.20I` | 3 | 0 | 3 | Oscillating | Internal clock, CPG |
-| `01E.12E.20I` | 3 | 2 | 1 | Chaos | Exploration, variability |
+| `01E.12E.20I` | 3 | 2 | 1 | Chaotic candidates | Exploration, variability |
 | `01E.02E.10E.21I` | 4 | 3 | 1 | Oscillating | Regulated rhythm |
-| `01E.02E.10E.12E.20I` | 5 | 4 | 1 | Chaos | Sensitivity to initial conditions |
+| `01E.02E.10E.12E.20I` | 5 | 4 | 1 | Chaotic candidates | Sensitivity to initial conditions |
 
 ### JSON schema
 
@@ -156,12 +158,12 @@ A Tridom is **alive** if `vitality > threshold`; it **dies** (self-extinguishes)
 | Simple regulation | N1D | Direct response, no memory needed |
 | High noise | N2D | Bidirectional feedback filters noise |
 | Delay k=2,3 | N3D | Triadic loop encodes short/mid memory |
-| **Strong hysteresis** | **N3D** | **Factor ×1.64 over N1D** — spontaneous directional encoding |
+| **Strong hysteresis** | **N3D** | **Factor ×1.64 over N1D** — suggests directional encoding capability |
 
 ### TEST_009 — Calibration grid (eta × w_decay)
 
 30 configurations tested on delays k=4 and k=5.  
-**Recommended:** `eta=1e-3`, `w_decay=1e-5` — N3D wins on both delays simultaneously.
+**Recommended (local optimum in grid tested):** `eta=1e-3`, `w_decay=1e-5` — N3D wins on both delays simultaneously.<!-- TODO: broader grid search or Bayesian optimization may yield better parameters -->
 
 ```
 eta=1e-03, w_decay=1e-05:
@@ -177,7 +179,7 @@ Full results: `test009_calibration.csv`
 
 File: `tridom_tgs_v2.py`
 
-A self-organizing population of Tridom groups with **fully endogenous** lifecycle rules.
+A self-organizing population of Tridom groups with **endogenous lifecycle within an explicitly specified rule scaffold**.
 
 ### Architecture
 
@@ -217,10 +219,10 @@ The sole survivor (`713dc102`) replicates 3 generations during recovery, rebuild
 | Concept | Tridom | Classical approach |
 |---------|--------|--------------------|
 | Grain | Triad (3 nodes) as explicit formal unit | Neuron or full network |
-| Substrate | Invariant by construction (L1 sign pattern) | Substrate-specific |
+| Substrate | Structurally invariant at L1 (signed topology) | Substrate-specific |
 | Dynamics | Equivalence class, not parameter set | Fixed architecture |
 | Taxonomy | 78 canonical classes, open atlas | Descriptive motif statistics |
-| Agency | Endogenous birth/death (vitality) | External training loop |
+| Agency | Endogenous birth/death within rule scaffold (vitality) | External training loop |
 
 **Key references:**
 - Milo et al. (2002) — *Network motifs: simple building blocks of complex networks*, Science
@@ -260,7 +262,7 @@ If you use Tridom in your work, please cite:
 ```bibtex
 @software{faihy2026tridom,
   author    = {Faihy, Jean-Paul},
-  title     = {Tridom: A Minimal Causal Unit for Substrate-Invariant Network Dynamics},
+  title     = {Tridom: A Minimal Signed Triadic Unit for Substrate-Aware Network Dynamics},
   year      = {2026},
   version   = {0.4},
   url       = {https://github.com/jpfai/tridom},
@@ -278,7 +280,7 @@ Suggested contributions:
 - Extend the atlas to n=4 (four-node motifs)
 - Implement Φ (IIT phi) computation for binary Tridoms
 - Benchmark Tridom-RNN against standard GRU/LSTM on memory tasks
-- Formal proof of the Triadic Threshold Theorem (Thomas–Kaufman / Soulé framework)
+- Formal proof of the Triadic Threshold Hypothesis (Thomas–Kaufman / Soulé framework)
 
 ---
 
