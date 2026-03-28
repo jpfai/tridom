@@ -17,6 +17,7 @@ from collections import deque
 from dataclasses import dataclass, field
 from typing import List, Optional
 import uuid
+import os
 
 # ─── Hyperparamètres TGS v2 ────────────────────────────────────────────────────
 ETA           = 1e-3    # calibré par TEST_009
