@@ -368,6 +368,19 @@ if __name__ == "__main__":
     torch.manual_seed(42)
     tgs, log = run_tgs_v2_demo()
 
+    # ─── Export résultats (C3 — persistance) ──────────────────────────────────
+    import json
+    export = {
+        "seed": 42,
+        "status": tgs.status(),
+        "event_log": tgs.event_log,
+        "snapshots": log,
+    }
+    export_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tgs_v2_results.json")
+    with open(export_path, "w") as f:
+        json.dump(export, f, indent=2, default=str)
+    print(f"\n[EXPORT] Résultats → {export_path}")
+
     print("\n" + "=" * 70)
     print("ARCHITECTURE Nona² — BILAN")
     print("=" * 70)
