@@ -17,6 +17,7 @@ from collections import deque
 from dataclasses import dataclass, field
 from typing import List, Optional
 import uuid
+import os
 
 # ─── Hyperparamètres TGS v2 ────────────────────────────────────────────────────
 ETA           = 1e-3    # calibré par TEST_009
@@ -367,6 +368,19 @@ if __name__ == "__main__":
     np.random.seed(42)
     torch.manual_seed(42)
     tgs, log = run_tgs_v2_demo()
+
+    # ─── Export résultats (C3 — persistance) ──────────────────────────────────
+    import json
+    export = {
+        "seed": 42,
+        "status": tgs.status(),
+        "event_log": tgs.event_log,
+        "snapshots": log,
+    }
+    export_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tgs_v2_results.json")
+    with open(export_path, "w") as f:
+        json.dump(export, f, indent=2, default=str)
+    print(f"\n[EXPORT] Résultats → {export_path}")
 
     print("\n" + "=" * 70)
     print("ARCHITECTURE Nona² — BILAN")
