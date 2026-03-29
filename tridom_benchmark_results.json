@@ -1,0 +1,33 @@
+{
+  "task": "hysteresis_classification",
+  "seed": 42,
+  "device": "cpu",
+  "hyperparams": {
+    "n_samples": 2000,
+    "seq_len": 50,
+    "noise_std": 0.15,
+    "hidden_size": 3,
+    "epochs": 50,
+    "lr": 0.001,
+    "batch_size": 64,
+    "train_split": 0.8
+  },
+  "results": {
+    "Tridom (EEI, 3 nodes)": {
+      "accuracy": 0.985,
+      "n_params": 14,
+      "train_time_s": 6.85
+    },
+    "GRU (3 units)": {
+      "accuracy": 1.0,
+      "n_params": 62,
+      "train_time_s": 9.07
+    },
+    "LSTM (3 units)": {
+      "accuracy": 1.0,
+      "n_params": 80,
+      "train_time_s": 2.38
+    }
+  },
+  "tridom_topology": "01E.12E.20I (EEI cycle)"
+}

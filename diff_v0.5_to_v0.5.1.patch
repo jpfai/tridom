@@ -1,0 +1,428 @@
+--- /data/.openclaw/repos/tridom/tridom_preprint_v0.5.md	2026-03-28 19:07:25.962870902 +0100
++++ /data/.openclaw/repos/tridom/tridom_preprint_v0.5.1.md	2026-03-29 21:33:01.010824810 +0200
+@@ -8,7 +8,7 @@
+ Correspondence: faihy.jeanpaul@gmail.com  ·  GitHub: github.com/jpfai/tridom  ·  DOI:
+ 10.5281/zenodo.19130439
+ 
+-March 2026  ·  v0.4
++March 2026  ·  v0.5.1
+ 
+ Abstract
+ 
+@@ -16,17 +16,15 @@
+ on three nodes endowed with a binary signed coupling structure (excitatory /
+ inhibitory) and a qualitative dynamical equivalence class. We formulate and support the hypothesis that the triadic
+ level constitutes a minimal threshold at which all non-trivial dynamical families —
+-multi-stability, oscillation, and chaotic candidates — become accessible (the
+-Triadic Threshold Hypothesis). We further show that the binary sign pattern (topology
++multi-stability and oscillation — become accessible (the
++Triadic Threshold Hypothesis). The atlas exhibits monostable and oscillatory regimes under the tested protocol. No robust chaotic regime was observed under extended exploration (50 initial conditions, 2000 integration steps). We further show that the binary sign pattern (topology
+ + E/I labelling) is structurally substrate-invariant at the L1 level: it is preserved across biological, digital, and
+ logical implementations. We provide: (i) a formal three-level equivalence hierarchy
+ (structural, regime, conjugacy); (ii) an exhaustive atlas of 78 canonical signed triadic
+-topologies classified by ODE dynamical regime (56 monostable, 15 oscillating, 7
+-chaotic candidates); (iii) a PyTorch reference implementation with local Hebbian plasticity,
+-calibrated on delay and hysteresis tasks; and (iv) a self-organising multi-agent
+-system (TridomGroupSystem v2 / Nona2) with endogenous birth, death, and replication within an explicitly specified rule scaffold. Tridom's contribution is not incremental: it shifts the ontological grain
+-from the motif as a network statistic to the motif as a formal, persistent,
+-substrate-aware candidate causal unit.
++topologies classified by ODE dynamical regime (57 monostable, 21 oscillating, 0 chaotic);
++(iii) a PyTorch reference implementation with local Hebbian plasticity,
++calibrated on delay and hysteresis tasks; (iv) a self-organising multi-agent
++system (TridomGroupSystem v2 / Nona2) with endogenous birth, death, and replication within an explicitly specified rule scaffold; and (v) a compact parameter-efficiency comparison against GRU and LSTM baselines. Tridom's contribution is not incremental: it proposes reframing the motif from a network statistic toward a formal, persistent, substrate-aware unit whose causal properties remain to be empirically validated.
+ 
+ Keywords: network motifs, triadic circuits, signed directed graphs, substrate invariance,
+ dynamical systems, Hebbian plasticity, self-organising agents
+@@ -36,26 +34,24 @@
+ The  concept  of  network  motif  —  a  subgraph  appearing  significantly  more  often  than  in
+ equivalent randomised networks — has been central to systems biology since Milo, Alon et al.
+ (2002)1.  Yet,  despite  two  decades  of  productive  use,  the  motif  has  remained  a  statistical
+-signature, identified post-hoc in large networks, with no formal claim to ontological status as
+-an independent causal unit.
++signature, identified post-hoc in large networks, with no formal definition as an autonomous dynamical unit — a gap this work aims to address.
+ 
+ A  parallel  tradition,  rooted  in  Thomas  &  Kaufman  (2001)2  and  Soulé  (2003)3,  established
+ necessary  structural  conditions  linking  the  sign  pattern  of  feedback  loops  to  dynamical
+ regimes  (multistationarity,  oscillation).  These  results  apply  to  networks  of  arbitrary  size  and
+ provide necessary conditions — not a constructive classification at the scale of a minimal unit.
+ 
+-This paper elevates the three-node signed motif from statistical building block to ontological
+-unit. We call this unit a Tridom — a triadic domain of causal organisation. The central claim is:
++This paper reframes the three-node signed motif as a candidate dynamical unit, defined by a formal structural and dynamical characterisation rather than by statistical over-representation alone. The central claim is:
+ 
+-"The elementary grain of a connectome is not the isolated neuron, but the
+-causal triad — defined by its dynamics, not its matter."
++"We hypothesise that the relevant unit of analysis for connectome-scale organisation may be the causal triad, defined by its dynamical regime rather than by substrate identity — a proposition to be tested against empirical connectome data"
+ 
+ The contributions of this paper are threefold. Theoretically, we introduce a formal definition of
+ the  Tridom  as  a  triple  (G,  σ,  [f])  with  a  three-level  equivalence  hierarchy,  and  we  state  and
+ formulate  and  support  the  Triadic  Threshold  Hypothesis  that  n  =  3  is  the  minimal  size  for
+ substrate-invariant non-trivial organisation. Empirically, we provide an exhaustive atlas of 78
+-canonical  topologies  classified  by  ODE  regime,  a  calibrated  PyTorch  implementation,  and
+-benchmark  results  on  delay  and  hysteresis  tasks.  Architecturally,  we  introduce  TGS  v2  /
++canonical  topologies  classified  by  ODE  regime,  a  calibrated  PyTorch  implementation,
++benchmark  results  on  delay  and  hysteresis  tasks,  and  a  compact  parameter-efficiency
++comparison against GRU and LSTM baselines. Architecturally,  we  introduce  TGS  v2  /
+ Nona2,  a  self-organising  population  of  Tridoms  with  endogenous  lifecycle  (birth,  death,
+ replication) governed by an internal vitality metric within a fixed lifecycle rule scaffold, without any external task-training oracle.
+ 
+@@ -97,32 +93,18 @@
+ work  is  complementary  and  operates  one  level  above  Tridom,  presupposing  rather  than
+ defining the base unit.
+ 
+-3. Formal Definition
++3. Formal Definition
+ 
+ 3.1 The Tridom
+ 
+ A Tridom is a triple (G, σ, [f]) where:
+ 
+-• G = (V, E) with V = {n
+-
+-, n
+-
+-1
+-
+-2
+-
+-, n
+-
+-3
+-
++• G = (V, E) with V = {n₁, n₂, n₃}, a strongly connected directed graph with at least one
+ feedback cycle.
+ 
+-}, a strongly connected directed graph with at least one
+-
+ • σ : E -> {+1, -1} — binary edge labelling, excitatory (E) or inhibitory (I).
+ 
+ • [f] — equivalence class of local dynamics under topological conjugacy of the phase-space
+-
+ flow.
+ 
+ 3.2 Equivalence Hierarchy
+@@ -144,7 +126,7 @@
+ L2 — Regime
+ 
+ Same attractor family (monostable,
+-bistable, oscillating, chaotic)
++bistable, oscillating)
+ 
+ Numerical (ODE
+ integration)
+@@ -192,32 +174,33 @@
+ Bidirectional feedback possible; no generic periodic
+ oscillation or chaos
+ 
+-All families: monostability,
+-multistability, oscillation, minimal
+-chaos
++Multi-stability and oscillatory regimes
+ 
+ Stable under parameter perturbation —
+-minimal complete grain
++minimal candidate grain (hypothesis supported numerically, not yet formally proven)
++
++become accessible at the triadic scale; the presence of chaos under the considered realizations remains an open question
+ 
+-Corollary (conjectural).  n  =  3  is  the  smallest  integer  at  which  substrate-invariant  non-trivial  causal
+-organisation  becomes  possible  in  the  strong  sense:  there  exist  signed  triadic  topologies
+-admitting each dynamical family under suitable realizations,  enabling  the  signed  structure  to  preserve  its
+-qualitative regime under substrate change.
++Corollary (conjectural).  n  =  3  is  the  smallest  integer  at  which  substrate-invariant  non-trivial  organisation is demonstrated under the present numerical protocol, consistent with the Thomas–Kaufman structural conditions; the strong impossibility claim for general substrates remains conjectural.
+ 
+ Evidence sketch. The n = 1 and n = 2 cases follow directly from the Thomas–Kaufman conditions2:
+ without  a  positive  feedback  circuit  of  length  ≥  2,  multistationarity  is  structurally  excluded;
+ without  a  negative  feedback  circuit  of  length  ≥  3,  generic  oscillation  is  excluded.  The  n  =  3
+ constructive  case  is  demonstrated  by  the  atlas  (Section  5):  the  existence  of  signed  strongly
+ connected  3-node  graphs  producing  oscillation  (e.g.,  topology  01I.12I.20I,  the  three-inhibitor
+-cycle) and chaos (e.g., 01E.12E.20I) under ODE integration with tanh nonlinearity, stable across
+-random initial conditions, provides constructive numerical support for the lower bound. A complete formal proof of the Triadic Threshold Hypothesis within the Thomas–Kaufman / Soulé framework remains an open contribution item (see Section 8).
++cycle) under ODE integration with tanh nonlinearity, stable across
++random initial conditions, provides constructive numerical support for the lower bound.
++
++Note on chaos. The v0.1 atlas (8 initial conditions, 500 integration steps) reported 7 "chaotic candidates" based on positive Lyapunov-type indicators. Extended exploration with 50 initial conditions and 2000 integration steps (atlas v0.2) revealed all 7 to be false positives: none exhibited sustained positive λ_max under the more stringent protocol. This result suggests that the triadic scale may not generically support robust chaos under continuous-time tanh ODE realizations. Chaotic dynamics may require higher-order structures (n ≥ 4), which would make the triadic oscillatory threshold a potentially more precise characterization of the minimal dynamical grain.
+ 
+-5. Atlas of 78 Canonical Topologies and Numerical Classification Protocol
++A complete formal proof of the Triadic Threshold Hypothesis within the Thomas–Kaufman / Soulé framework remains an open contribution item (see Section 8).
++
++5. Atlas of 78 Canonical Topologies and Numerical Classification Protocol
+ 
+ We  exhaustively  enumerate  all  strongly  connected  signed  directed  graphs  on  3  nodes  (no
+ self-loops), up to node-index permutation. Each topology is classified by dynamical regime via
+ ODE numerical integration: tanh nonlinearity, coupling matrix drawn from the signed topology,
+-8  random  initial  conditions  per  topology,  500  integration  steps.  The  full  atlas  is  published  as
++50  random  initial  conditions  per  topology,  2000  integration  steps.  The  full  atlas  is  published  as
+ open data in tridom_atlas.json.
+ 
+ In this version of the paper, the atlas should be read as a constructive numerical classification under that protocol, not yet as a formal substrate-independent regime theorem.
+@@ -232,30 +215,29 @@
+ 
+ Monostable
+ 
+-56
++57
+ 
+-71.8%
++73.1%
+ 
+ Converges to a single stable fixed point from all tested
+ initial conditions
+ 
+ Oscillating
+ 
+-Chaotic candidates
+-
+-Total
++21
+ 
+-15
++26.9%
+ 
+-7
++Total
+ 
+ 78
+ 
+-19.2%
++100%
+ 
+-9.0%
++Stable limit cycle; trajectory variance > threshold across all
++trials
+ 
+-100%
++The 7 topologies initially classified as "chaotic candidates" in atlas v0.1 (8 CI, 500 steps) were re-evaluated under the extended protocol (50 CI, 2000 steps). None sustained positive λ_max; all were reclassified as oscillating (6 cases) or monostable (1 case). The v0.1 classification was a false positive artefact of insufficient sampling.
+ 
+ Representative topologies
+ 
+@@ -299,12 +281,6 @@
+ 
+ 1
+ 
+-Stable limit cycle; trajectory variance > threshold across all
+-trials
+-
+-Sensitive dependence on initial conditions; positive
+-Lyapunov-type numerical indicator
+-
+ Regime
+ 
+ Typical use
+@@ -314,7 +290,7 @@
+ Internal clock, central pattern
+ generator
+ 
+-Chaotic candidates
++Oscillating
+ 
+ Exploration, variability generation
+ 
+@@ -322,9 +298,13 @@
+ 
+ Regulated rhythm with feedforward
+ 
+-Chaotic candidates
++Oscillating
++
++Sensitivity-amplifying circuits
+ 
+-Sensitivity to initial conditions
++5.1 Interpretation
++
++This result suggests that the triadic scale may not generically support robust chaos under continuous-time tanh ODE realizations. Chaotic dynamics may require higher-order structures (n ≥ 4), which would make the triadic oscillatory threshold a potentially more precise characterization of the minimal dynamical grain. This remains a hypothesis to be tested with alternative nonlinearities (ReLU, piecewise-linear) and larger system sizes.
+ 
+ 6. Reference Implementation
+ 
+@@ -355,7 +335,7 @@
+ Death  is  triggered  when  vitality  remains  below  0.25  for  a  sustained  window,  entirely  without
+ external supervision.
+ 
+-6.3 Comparative Architecture: N1D / N2D / N3D
++6.3 Comparative Architecture: N1D / N2D / N3D
+ 
+ Unit
+ 
+@@ -381,24 +361,21 @@
+ 
+ Monostability only
+ 
+-Bidirectional feedback A <->
+-B
++Bidirectional feedback A <-> B
+ 
+-Monostability, bistability; no generic
+-oscillation
++Monostability, bistability; no generic oscillation
+ 
+ Signed triadic loop
+ A->B->C->A
+ 
+-Full palette: monostability, multistability,
+-oscillation, chaotic candidates
++Full palette: monostability, multistability, oscillation
+ 
+ 7. Experimental Results
+ 
+ 7.1 TEST_008 — Comparative Dynamics with Hebbian Plasticity
+ 
+ N1D,  N2D,  and  N3D  were  evaluated  on  eight  task  scenarios  with  identical  PlasticNeuron
+-modules  (η  =  10-3,  w_decay  =  10-4,  5  repetitions  per  scenario).  The  score  is  the  cumulative
++modules  (η  =  10⁻³,  w_decay  =  10⁻⁴,  5  repetitions  per  scenario).  The  score  is  the  cumulative
+ negative loss over 300 steps (higher = better).
+ 
+ Scenario
+@@ -488,7 +465,7 @@
+ 7.2 TEST_009 — Calibration Grid (eta x lambda)
+ 
+ 30  configurations  of  (η,  λ)  were  tested  on  delays  k  =  4  and  k  =  5  (N_repeat  =  10).  The
+-recommended configuration η = 10-3, λ = 10-5 is the only one where N3D wins on both delays
++recommended configuration η = 10⁻³, λ = 10⁻⁵ is the only one where N3D wins on both delays
+ simultaneously:
+ 
+ eta=1e-3, lam=1e-5: k=4 -> N1D=-66.88 N2D=-55.51 N3D=-52.44 *
+@@ -497,6 +474,37 @@
+ 
+ Full results are available in test009_calibration.csv.
+ 
++7.3 Benchmark — Compact Parameter Efficiency
++
++To situate Tridom's representational capacity, we compare N3D (Tridom EEI, 3 nodes) against
++standard recurrent units on a classification task:
++
++Model
++
++Accuracy
++
++Parameters
++
++Tridom (EEI, 3 nodes)
++
++98.5%
++
++14
++
++GRU (3 units)
++
++100%
++
++62
++
++LSTM (3 units)
++
++100%
++
++80
++
++Tridom achieves competitive performance with significantly fewer parameters, suggesting a compact representational advantage. The gap in accuracy (1.5pp) relative to GRU/LSTM is expected given the order-of-magnitude difference in parameter count; whether this gap closes with ensemble or stacked Tridom architectures is an open question.
++
+ 8. TridomGroupSystem v2 / Nona2
+ 
+ TGS  v2  is  a  self-organising  population  of  Tridom  groups  implementing  an  endogenous
+@@ -508,7 +516,7 @@
+ 
+ • Level 2: N2D (2 neurons) — noise filtering, short memory
+ 
+-• Level 3: N3D (3 neurons) — hysteresis, delays, oscillation
++• Level 3: N3D (3 neurons) — hysteresis, delays, oscillation
+ 
+ • Level 4: Nona (3 groups × N3D) — collective robustness
+ 
+@@ -607,8 +615,8 @@
+ 
+ Tridom  does  not  replace  the  network  motif  programme  —  it  reframes  it.  The  statistical
+ over-representation  of  triadic  patterns  (Milo  et  al.  20021)  can  now  be  read  as  evidence  that
+-biological  systems  preferentially  instantiate  formal  causal  units  with  guaranteed  dynamical
+-properties. The Thomas–Kaufman structural conditions2 become the theoretical underpinning
++biological  systems  preferentially  instantiate  formal  dynamical  units  with  guaranteed
++regime properties under suitable realizations. The Thomas–Kaufman structural conditions2 become the theoretical underpinning
+ of the Triadic Threshold Hypothesis rather than independent results.
+ 
+ The  distinction  from  Driscoll  et  al.  (2024)7  is  fundamental.  Their  'dynamical  motifs'  are
+@@ -618,41 +626,44 @@
+ 
+ 9.2 Limitations
+ 
+-Several  limitations  should  be  acknowledged.  First,  the  Triadic  Threshold  Theorem  is  stated
+-with a proof sketch relying on constructive ODE examples; a complete formal proof within the
++Several  limitations  should  be  acknowledged.  First,  the  Triadic  Threshold  Hypothesis  is  stated
++with a constructive numerical sketch; a complete formal proof within the
+ Thomas–Kaufman  /  Soulé  framework  remains  an  open  item.  Second,  the  calibration
+ experiments  (TEST_008,  TEST_009)  use  a  single  task  family  (delay  prediction,  hysteresis);
+ broader  benchmarking  against  standard  RNN  architectures  (GRU,  LSTM)  on  established
+ sequence  tasks  would  strengthen  the  empirical  claims.  Third,  the  atlas  is  limited  to  n  =  3;
+ extension to n = 4 would produce a substantially larger combinatorial space and is a natural
+-next step.
++next step. Fourth, the absence of chaos at n = 3 under the tested protocol does not constitute a formal impossibility proof — it remains possible that alternative nonlinearities or parameter regimes could yield chaotic behaviour at the triadic scale.
+ 
+-9.3 Open Contributions
++9.3 Open Contributions
+ 
+ • Formal proof of the Triadic Threshold Hypothesis (Thomas–Kaufman / Soulé framework).
+ 
+-• Extension of the atlas to n = 4 (four-node strongly connected signed graphs).
++• Extension of the atlas to n = 4 (four-node strongly connected signed graphs) — motivated by the hypothesis that chaos may require higher-order structures.
+ 
+ • Benchmark Tridom-RNN against GRU / LSTM on standard sequence tasks.
+ 
++• Investigation of chaotic dynamics at n = 3 under alternative nonlinearities (ReLU, piecewise-linear).
++
+ • Implementation of integrated information phi (IIT) for binary Tridoms.
+ 
+ • Biological validation: identification of Tridom classes in published connectomes.
+ 
+ 10. Conclusion
+ 
+-We have introduced Tridom as a formal candidate causal unit with a structurally substrate-invariant L1 core defined by a triple (G,
+-σ,  [f]):  signed  strongly  connected  graph  on  3  nodes,  binary  excitatory  /  inhibitory  edge
+-labelling, and dynamical equivalence class. The Triadic Threshold Hypothesis supports the view that n
+-=  3  is  the  minimal  grain  at  which  all  non-trivial  dynamical  families  become
+-accessible. The atlas of 78 canonical topologies, the calibrated PyTorch implementation, and
+-the TGS v2 self-organising system with endogenous lifecycle provide a complete open-source
+-platform for further investigation.
+-
+-The contribution of Tridom is not incremental: it shifts the ontological grain from the motif as a
+-network  statistic  to  the  motif  as  a  formal,  persistent,  substrate-invariant  causal  unit  —  a
+-change  that  opens  new  theoretical  and  experimental  directions  at  the  intersection  of
+-dynamical systems theory, computational neuroscience, and artificial life.
++We  have  introduced  Tridom  as  a  formal  candidate  dynamical  unit  whose  causal  properties
++constitute  an  open  research  direction,  with  a  structurally  substrate-invariant  L1  core  defined
++by  a  triple  (G,  σ,  [f]):  signed  strongly  connected  graph  on  3  nodes,  binary  excitatory  /
++inhibitory  edge  labelling,  and  dynamical  equivalence  class.  The  Triadic  Threshold
++Hypothesis  supports  the  view  that  n  =  3  is  the  minimal  grain  at  which  multi-stability  and
++oscillatory  regimes  become  accessible.  Extended  numerical  exploration  (50  initial  conditions,
++2000  integration  steps)  did  not  reveal  robust  chaotic  dynamics  at  the  triadic  scale,  suggesting
++that  chaos  may  require  higher-order  structures  (n  ≥  4)  —  a  hypothesis  left  open  for  future
++investigation.  The  atlas  of  78  canonical  topologies,  the  calibrated  PyTorch  implementation,
++the  TGS  v2  self-organising  system  with  endogenous  lifecycle,  and  the  compact  parameter-
++efficiency  comparison  provide  a  complete  open-source  platform  for  further  investigation.
++
++The contribution of Tridom is not incremental: it proposes reframing the motif from a network statistic toward a formal, persistent unit with a substrate-invariant L1 structural core — and invites future work to establish whether this structural invariance supports causal claims at the connectome scale.
+ 
+ References
+ 
+@@ -726,20 +737,18 @@
+ 
+ short- and long-term plastic synapses. PLOS ONE, 9(1), e84626. doi:10.1371/journal.pone.0084626
+ 
+-Repository and Data Availability
++Repository and Data Availability
+ 
+ All code, data, and documentation are openly available under the MIT licence:
+ 
+ • GitHub: github.com/jpfai/tridom
+ 
+-• Zenodo archive (v0.4): doi:10.5281/zenodo.19130439
++• Zenodo archive (v0.5.1): doi:10.5281/zenodo.19130439
+ 
+-• tridom_atlas.json — 78 canonical topologies with regime labels (open data)
++• tridom_atlas.json — 78 canonical topologies with regime labels (open data, atlas v0.2)
+ 
+ • tridom_tgs_v2.py — TGS v2 self-organising system with lifecycle
+ 
+ • test009_calibration.csv — full calibration grid results
+ 
+ Generated by Perplexity Computer · March 2026
+-
+-
+\ No newline at end of file
