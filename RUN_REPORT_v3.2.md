@@ -1,60 +1,108 @@
-# v3.2 — Robust local validation of C1 / C2
+# v3.2 — Quantitative validation of effective chaotic classes C1 / C2
 
-**Status:** numerical validation only. Not an analytical proof.
+## Status
 
----
+Numerical validation only.
+This is not an analytical proof of chaos.
 
-## What v3.2 does
+## Objective
 
-v3.2 replaces the previous chaos indicator with a more robust estimate of the maximal Lyapunov exponent (MLE) using the Benettin / variational equation method, and tests local persistence around four previously identified anchors.
+Version v3.2 was designed to quantitatively validate the two effective chaotic classes previously identified in v2 by replacing the former indicator with a more robust estimate of the maximal Lyapunov exponent (MLE) using the Benettin / variational equation method, and by testing local persistence around four retained anchor points.
 
-## Anchors
+## Scope
 
-| Label | Topology | Perm | (σ, ρ, β) |
-|-------|----------|------|-----------|
-| C1a | topo_47 | (0,1,2) | (10, 28, 8/3) |
-| C1b | topo_57 | (0,1,2) | (16, 45, 4) |
-| C2a | topo_41 | (0,1,2) | (10, 99.6, 8/3) |
-| C2b | topo_44 | (0,1,2) | (16, 45, 4) |
+This is not a new global scan.
+The protocol is restricted to four local anchors:
 
-## Protocol
+- **C1a**: topo_47, perm=(0,1,2), (σ,ρ,β)=(10,28,8/3)
+- **C1b**: topo_57, perm=(0,1,2), (σ,ρ,β)=(16,45,4)
+- **C2a**: topo_41, perm=(0,1,2), (σ,ρ,β)=(10,99.6,8/3)
+- **C2b**: topo_44, perm=(0,1,2), (σ,ρ,β)=(16,45,4)
 
-For each anchor:
-- local 3×3×3 grid
-- 12 initial conditions per grid point
+For each anchor, a local 3×3×3 grid was explored:
+
+- σ ∈ {0.9, 1.0, 1.1} σ₀
+- ρ ∈ {0.95, 1.0, 1.05} ρ₀
+- β ∈ {0.9, 1.0, 1.1} β₀
+
+Each grid point was tested with:
+
+- 12 initial conditions
 - RK4 integration
-- long burn-in + long measurement window
-- MLE via variational equation + periodic renormalization
+- long burn-in
+- long measurement window
+- MLE estimation via variational equation + periodic renormalization
 
-## Global result
+## Classification rule
+
+Each case was classified using:
+
+- `bounded_frac`
+- `moving_frac`
+- `pos_lyap_frac`
+- `mle_mean`
+- `mle_median`
+
+Regimes:
+
+- **Unstable**: too few bounded trajectories
+- **Fixed**: bounded but weak motion
+- **Oscillating**: bounded + moving, but no robust positive MLE
+- **Complex**: bounded + moving + robust positive MLE
+
+A case is marked `robust_complex=True` only under a stricter combined criterion.
+
+## Main results
+
+### Global outcome
 
 Out of 108 tested cases:
-- **105 / 108** are `robust_complex=True`
-- **3 / 108** are non-robust
-- all 3 non-robust cases occur on C2a
 
-## Interpretation by class
+- 105 / 108 were classified as `robust_complex=True`
+- only 3 / 108 were non-robust, all on C2a
+- no anchor collapsed globally into fixed or unstable behavior
 
-| Class | Status |
-|-------|--------|
-| C1a | Robustly complex in the tested local neighborhood |
-| C1b | Strongest confirmation; robust across the full tested grid |
-| C2a | Mostly robust, with a small local oscillatory boundary |
-| C2b | Robust across the full tested grid |
+### Anchor-wise interpretation
 
-## Main conclusion
+**C1a** — Confirmed as a locally robust complex regime. Across the tested neighborhood, trajectories remain bounded and moving, with clearly positive median MLE values.
 
-v3.2 provides strong numerical evidence that the effective classes C1 and C2 are not isolated artifacts, but locally persistent complex regimes under a stronger MLE estimation protocol.
+**C1b** — Strongest confirmation in the study. The whole tested neighborhood is robustly complex, with high positive MLE values throughout.
 
-In particular:
-- the complex behavior is **not punctual**
+**C2a** — Mostly confirmed, but shows a localized fragility. Three points in the local grid were classified as Oscillating instead of robustly complex:
+
+1. σ=10.00, ρ=99.60, β=2.667
+2. σ=11.00, ρ=99.60, β=2.933
+3. σ=11.00, ρ=104.58, β=2.667
+
+This suggests that C2a lies near a local transition boundary between oscillatory and robustly complex behavior.
+
+**C2b** — Strongly confirmed as a robust complex class over the full tested local grid.
+
+## Scientific conclusion
+
+The v3.2 results strongly support the following statement:
+
+> The classes C1 and C2, previously identified in v2 as effective chaos candidates, are confirmed in v3.2 as numerically robust and locally persistent complex regimes under a stronger MLE estimation protocol based on the Benettin / variational equation method.
+
+More precisely:
+
+- the observed complex behavior is not punctual
 - it persists over small local parameter regions
-- the signal detected in v2 survives a more demanding quantitative test
+- the former signal of chaos from v2 does not appear to be a weak artifact of the previous estimator
+- C2a remains the only anchor showing a limited local loss of robustness
 
-## Important limitation
+## Epistemic status
 
-This is robust numerical evidence, **not an analytical proof of chaos**.
+These results justify the claim of:
+
+- robust numerical evidence for locally persistent complex dynamics
+- compatibility with chaos in a strong numerical sense
+
+They do not yet justify the stronger claim of:
+
+- analytical proof of chaos
+- complete theoretical characterization of the chaotic sets
 
 ## Next step
 
-A natural continuation is a targeted boundary study around C2a, to characterize more precisely the transition between robustly complex and oscillatory behavior.
+The most coherent continuation is not another broad scan, but a targeted boundary study around C2a, in order to characterize more precisely the transition between robustly complex and oscillatory behavior.
