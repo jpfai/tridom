@@ -2,11 +2,37 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19130439.svg)](https://doi.org/10.5281/zenodo.19130439)
 
-**Version:** 0.4 — 2026-03-20  
+**Version:** 0.5.1 — 2026-04  
 **Author:** Jean-Paul Faihy  
 **Location:** Saujon, Nouvelle-Aquitaine, FR  
 **License:** MIT  
 **DOI:** `10.5281/zenodo.19130439`
+
+---
+
+## Current status
+
+**Canonical reference block:** `v3.3bis_vps_reference_7nuclei` (1225 points, B = 25, B<0 = 9).
+
+**Canonical targeted branch:** `multi_patch_500pts` — targeted multi-patch refinement built from `B_25points.csv` and `B_neg9points.csv`, with 4 centers and 500 unique points.
+
+**Key results (targeted multi-patch vs reference block):**
+
+| Quantity | Reference block | Targeted multi-patch |
+|----------|----------------|---------------------|
+| Total points | 1225 | 500 |
+| B | 25 | 25 |
+| B<0 | 9 | 10 |
+| Boundary density | 2.0% | 5.0% |
+| Best Δmle | 0.160 | 0.069 |
+
+**Best targeted point:** P0218 (patch `POS_BEST`, coordinates `(10.698, 105.25, 2.475)`).
+
+**Current interpretation:** The boundary behaves as a **thick diagnostic transition zone** rather than a single isolated critical point. Targeted refinement densifies and sharpens this zone locally without overturning the reference reading.
+
+**Branch distinction:** `multi_patch_500pts` (canonical targeted branch) and `pos_best_v2_441pts` (separate local zoom) must not be conflated.
+
+See [RESULTS_STATUS_2026-04.md](RESULTS_STATUS_2026-04.md) for the full scientific status and [BLOCK03_vs_TARGETED_MULTIPATCH500.md](BLOCK03_vs_TARGETED_MULTIPATCH500.md) for the detailed comparison.
 
 ---
 
