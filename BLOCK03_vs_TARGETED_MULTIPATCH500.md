@@ -1,163 +1,163 @@
 # BLOCK03_vs_TARGETED_MULTIPATCH500
 
-**Project:** Tridom  
-**Comparison date:** 2026-04  
-**Purpose:** final scientific comparison between the canonical reference block (`03_v3.3bis_vps_reference_7nuclei`) and the canonical targeted branch (`multi_patch_500pts`)
+**Projet :** Tridom  
+**Date de comparaison :** 2026-04  
+**Objet :** comparaison scientifique finale entre le bloc de référence canonique (`03_v3.3bis_vps_reference_7nuclei`) et la branche targeted canonique (`multi_patch_500pts`)
 
 ---
 
-## 1. Scope
+## 1. Portée
 
-This document compares:
+Ce document compare :
 
-- the canonical reference block:
+- le bloc de référence canonique :
   - `TRIDOM_ARCHIVE/03_v3.3bis_vps_reference_7nuclei/`
-- the canonical targeted refinement branch:
+- la branche canonique de raffinement ciblé :
   - `TRIDOM_ARCHIVE/04_targeted_extraction/multi_patch_500pts/`
   - `TRIDOM_ARCHIVE/05_targeted_input_grid/multi_patch_500pts/`
   - `TRIDOM_ARCHIVE/06_targeted_run_results/multi_patch_500pts/`
 
-Its goal is to answer a precise question:
+Son objectif est de répondre à une question précise :
 
-> What does the targeted multi-patch refinement add, scientifically, relative to the current reference block?
+> Qu'apporte scientifiquement le raffinement targeted multi-patches par rapport au bloc de référence actuel ?
 
-This document does **not** compare the targeted branch with `pos_best_v2_441pts`, which is a separate local zoom.
+Ce document **ne compare pas** la branche targeted avec `pos_best_v2_441pts`, qui constitue un zoom local distinct.
 
 ---
 
-## 2. Canonical status of the two compared objects
+## 2. Statut canonique des deux objets comparés
 
-### 2.1 Reference block
+### 2.1 Bloc de référence
 
-The current scientific reference block is:
+Le bloc de référence scientifique actuel est :
 
 - `v3.3bis_vps_reference_7nuclei`
 
-This block must be treated as the canonical baseline for current boundary interpretation.
+Ce bloc doit être traité comme la base canonique pour l'interprétation actuelle de la frontière.
 
-### 2.2 Targeted branch
+### 2.2 Branche targeted
 
-The current canonical targeted branch is:
+La branche targeted canonique actuelle est :
 
 - `multi_patch_500pts`
 
-This branch is not a replacement for block 03.  
-It is a refinement layer built from block 03 candidate extraction.
+Cette branche n'est pas un remplacement du bloc 03.  
+C'est une couche de raffinement construite à partir de l'extraction des candidats du bloc 03.
 
 ---
 
-## 3. Data provenance
+## 3. Provenance des données
 
-### 3.1 Reference block
+### 3.1 Bloc de référence
 
-The reference block corresponds to the dense `v3.3bis` run over 7 nuclei:
+Le bloc de référence correspond au run dense `v3.3bis` sur 7 noyaux :
 
-- total points: `1225`
-- canonical status: reference
-- reading level: boundary reference before targeted refinement
+- total de points : `1225`
+- statut canonique : référence
+- niveau de lecture : référence frontière avant raffinement targeted
 
-### 3.2 Targeted branch
+### 3.2 Branche targeted
 
-The targeted multi-patch branch is built as follows:
+La branche targeted multi-patches est construite comme suit :
 
-1. extraction of:
+1. extraction de :
    - `B_25points.csv`
    - `B_neg9points.csv`
-2. targeted refinement planning:
+2. planification du raffinement targeted :
    - `refine_centers.csv`
    - `refine_manifest.json`
    - `refine_points.csv`
-3. targeted run on `500` explicit points
-4. extraction of:
+3. exécution targeted sur `500` points explicites
+4. extraction de :
    - `B_25points_targeted_full.csv`
    - `B_neg10points_targeted_full.csv`
 
-The canonical parent raw results file is:
+Le fichier brut parent canonique des résultats est :
 
 - `1775924962009_tridom_v3_3bis_targeted_CSV_TARGETED_results.csv`
 
-This file is the raw parent of the targeted multi-patch result interpretation.
+Ce fichier constitue le parent brut de l'interprétation des résultats targeted multi-patches.
 
 ---
 
-## 4. Numerical comparison
+## 4. Comparaison numérique
 
-## 4.1 Global counts
+### 4.1 Comptages globaux
 
-| Quantity | Block 03 (`v3.3bis_vps_reference_7nuclei`) | Targeted `multi_patch_500pts` |
+| Quantité | Bloc 03 (`v3.3bis_vps_reference_7nuclei`) | Targeted `multi_patch_500pts` |
 |----------|--------------------------------------------|-------------------------------|
-| Total points | 1225 | 500 |
+| Total de points | 1225 | 500 |
 | `B` | 25 | 25 |
 | `B<0` | 9 | 10 |
 | `UNSTABLE` | 0 | 0 |
 
-### Immediate reading
+#### Lecture immédiate
 
-- the targeted branch does **not** increase the total count of `B`;
-- it **does** increase the count of `B<0` from `9` to `10`;
-- it works on a **smaller and denser** region of parameter space.
-
----
-
-## 4.2 Boundary density
-
-### Block 03
-- `B density = 25 / 1225 ≈ 2.0%`
-
-### Targeted multi-patch
-- `B density = 25 / 500 = 5.0%`
-
-### Interpretation
-
-The targeted branch more than doubles the density of boundary candidates.
-
-This is a strong indication that the refinement is not random:
-it concentrates computational effort on a region where boundary structure is more likely to appear.
+- la branche targeted **n'augmente pas** le nombre total de `B` ;
+- elle **augmente** le nombre de `B<0` de `9` à `10` ;
+- elle travaille sur une région de l'espace des paramètres **plus petite et plus dense**.
 
 ---
 
-## 4.3 Negative boundary density
+### 4.2 Densité de frontière
 
-### Block 03
-- `B<0 density = 9 / 1225 ≈ 0.735%`
+#### Bloc 03
+- `densité B = 25 / 1225 ≈ 2.0%`
 
-### Targeted multi-patch
-- `B<0 density = 10 / 500 = 2.0%`
+#### Targeted multi-patches
+- `densité B = 25 / 500 = 5.0%`
 
-### Interpretation
+#### Interprétation
 
-The targeted branch significantly increases the concentration of negative-side candidates.
+La branche targeted fait plus que doubler la densité des candidats frontière.
 
-This does **not** prove a single crossing surface,
-but it improves access to the negative side of the transition zone.
+C'est une indication forte que le raffinement n'est pas aléatoire :
+il concentre l'effort computationnel sur une région où la structure frontière apparaît plus fréquemment.
 
 ---
 
-## 4.4 Best local robustness
+### 4.3 Densité négative de frontière
 
-### Block 03
-Best reference-level local candidate:
-- best `Δmle = 0.160`
+#### Bloc 03
+- `densité B<0 = 9 / 1225 ≈ 0.735%`
 
-### Targeted multi-patch
-Best local candidate:
+#### Targeted multi-patches
+- `densité B<0 = 10 / 500 = 2.0%`
+
+#### Interprétation
+
+La branche targeted augmente significativement la concentration de candidats du côté négatif.
+
+Cela **ne prouve pas** l'existence d'une surface de franchissement unique,
+mais améliore l'accès numérique au côté négatif de la zone de transition.
+
+---
+
+### 4.4 Meilleure robustesse locale
+
+#### Bloc 03
+Meilleur candidat de niveau référence :
+- meilleur `Δmle = 0.160`
+
+#### Targeted multi-patches
+Meilleur candidat local :
 - `P0218`
-- patch: `POS_BEST`
-- coordinates: `(10.698, 105.25, 2.475)`
-- best `Δmle = 0.069`
+- patch : `POS_BEST`
+- coordonnées : `(10.698, 105.25, 2.475)`
+- meilleur `Δmle = 0.069`
 
-### Interpretation
+#### Interprétation
 
-This is the clearest local improvement yielded by the targeted branch.
+C'est l'amélioration locale la plus nette produite par la branche targeted.
 
-The targeted refinement does not merely re-sample the same information:
-it yields a numerically cleaner best boundary candidate.
+Le raffinement targeted ne se contente pas de rééchantillonner la même information :
+il fournit un meilleur candidat frontière du point de vue de la robustesse numérique.
 
 ---
 
-## 5. Internal structure of the targeted branch
+## 5. Structure interne de la branche targeted
 
-Patch distribution:
+Répartition par patch :
 
 | Patch | `B` | `B<0` |
 |-------|----:|------:|
@@ -166,93 +166,97 @@ Patch distribution:
 | `NEG_NEG1` | 6 | 3 |
 | `B_CENTER_EMPIRICAL` | 2 | 1 |
 
-### Interpretation
+### Interprétation
 
-The targeted branch is not uniformly informative.
+La branche targeted n'est pas uniformément informative.
 
-Its strongest contribution is concentrated in:
+Sa contribution principale se concentre sur :
 - `POS_BEST`
-- then `NEG_NEG3`
-- then `NEG_NEG1`
+- puis `NEG_NEG3`
+- puis `NEG_NEG1`
 
-The empirical-center patch contributes less than the patch-centered local refinements.
+Le patch centré sur le centre empirique apporte moins que les raffinements locaux centrés sur des candidats sélectionnés.
 
-This suggests that the boundary structure is not simply centered on the empirical barycenter of `B`,
-but is more effectively resolved near selected local candidate regions.
-
----
-
-## 6. Scientific interpretation
-
-## 6.1 What remains unchanged
-
-The targeted branch does **not** overturn the reference reading.
-
-The following remain true:
-
-- the system exhibits a nontrivial boundary region;
-- the phenomenon is not reducible to a numerical blow-up;
-- the transition is not adequately described by a single isolated point.
-
-## 6.2 What improves
-
-The targeted branch adds three things:
-
-1. **higher density of boundary candidates**
-2. **more negative-side access**
-3. **better best local robustness**
-
-These are real gains, not only cosmetic reorganizations.
-
-## 6.3 What this means conceptually
-
-The targeted refinement supports the idea that the boundary behaves as a:
-
-> **thick diagnostic transition zone**
-
-rather than as a:
-- single point,
-- single exact threshold,
-- or already fully resolved surface.
-
-The refinement sharpens the local picture but does not yet close the geometric question.
+Cela suggère que la structure frontière n'est pas simplement centrée sur le barycentre empirique de `B`,
+mais qu'elle se résout mieux près de régions locales choisies.
 
 ---
 
-## 7. What is proved, probable, and still open
+## 6. Interprétation scientifique
 
-### Established
-- block 03 is the current reference block;
-- targeted multi-patch preserves `B = 25`;
-- targeted multi-patch increases `B<0` from `9` to `10`;
-- targeted multi-patch increases boundary density from `2.0%` to `5.0%`;
-- targeted multi-patch improves the best local `Δmle` from `0.160` to `0.069`.
+### 6.1 Ce qui reste inchangé
 
-### Strongly suggested
-- the most promising local zone is now concentrated around `POS_BEST`;
-- the boundary is better thought of as an extended local structure than as a single point.
+La branche targeted **ne renverse pas** la lecture de référence.
 
-### Still open
-- fine connectivity between local patches;
-- whether the boundary forms a sheet, ribbon, fragmented structure, or connected pockets;
-- parameter continuation beyond the currently refined region.
+Les points suivants restent vrais :
+
+- le système présente une zone frontière non triviale ;
+- le phénomène ne se réduit pas à un blow-up numérique ;
+- la transition n'est pas correctement décrite comme un point isolé unique.
+
+### 6.2 Ce qui s'améliore
+
+La branche targeted apporte trois gains réels :
+
+1. **une densité plus élevée de candidats frontière**
+2. **un meilleur accès au côté négatif**
+3. **une meilleure robustesse locale maximale**
+
+Il s'agit d'améliorations effectives, et non d'un simple reclassement cosmétique.
+
+### 6.3 Ce que cela signifie conceptuellement
+
+Le raffinement targeted renforce l'idée que la frontière se comporte comme une :
+
+> **zone de transition diagnostique épaisse**
+
+et non comme :
+- un point unique,
+- un seuil exact unique,
+- ou une surface déjà complètement résolue.
+
+Le raffinement affine l'image locale, mais ne ferme pas encore la question géométrique.
 
 ---
 
-## 8. Final comparison statement
+## 7. Ce qui est établi, probable et encore ouvert
 
-The correct final comparison is:
+### Établi
+- le bloc 03 est le bloc de référence actuel ;
+- le targeted multi-patches conserve `B = 25` ;
+- le targeted multi-patches augmente `B<0` de `9` à `10` ;
+- le targeted multi-patches augmente la densité frontière de `2.0%` à `5.0%` ;
+- le targeted multi-patches améliore le meilleur `Δmle` local de `0.160` à `0.069`.
 
-> Relative to the canonical reference block `v3.3bis_vps_reference_7nuclei`, the targeted branch `multi_patch_500pts` does not change the global interpretation of the phenomenon. It confirms and densifies it. The total number of `B` candidates remains `25`, the number of negative candidates increases from `9` to `10`, the boundary density rises from `2.0%` to `5.0%`, and the best local robustness improves from `Δmle = 0.160` to `Δmle = 0.069`. The cumulative evidence therefore supports the interpretation of the Tridom frontier as a thick diagnostic transition zone rather than a single isolated critical point.
+### Fortement suggéré
+- la zone locale la plus prometteuse se concentre désormais autour de `POS_BEST` ;
+- la frontière doit être pensée comme une structure locale étendue plutôt que comme un point unique.
+
+### Encore ouvert
+- la connectivité géométrique fine entre les patches ;
+- la question de savoir si la frontière forme une nappe, un ruban, une structure fragmentée ou des poches connectées ;
+- la continuation paramétrique au-delà de la région actuellement raffinée.
 
 ---
 
-## 9. Operational consequence
+## 8. Énoncé final de comparaison
 
-For repository communication and GitHub status reporting:
+La comparaison finale correcte est la suivante :
 
-- `03_v3.3bis_vps_reference_7nuclei` must remain the **reference block**
-- `multi_patch_500pts` must be presented as the **canonical refinement branch**
-- `pos_best_v2_441pts` must remain explicitly separate
+> Par rapport au bloc de référence canonique `v3.3bis_vps_reference_7nuclei`, la branche targeted `multi_patch_500pts` ne change pas l'interprétation globale du phénomène. Elle la confirme et la densifie. Le nombre total de candidats `B` reste `25`, le nombre de candidats négatifs passe de `9` à `10`, la densité frontière augmente de `2.0%` à `5.0%`, et la meilleure robustesse locale s'améliore de `Δmle = 0.160` à `Δmle = 0.069`. L'ensemble des éléments soutient donc l'interprétation de la frontière Tridom comme une zone de transition diagnostique épaisse plutôt que comme un point critique isolé unique.
 
-This distinction is mandatory for scientific clarity and repository traceability.
+---
+
+## 9. Conséquence opérationnelle
+
+Pour la communication du dépôt et du statut GitHub :
+
+- `03_v3.3bis_vps_reference_7nuclei` doit rester le **bloc de référence**
+- `multi_patch_500pts` doit être présenté comme la **branche canonique de raffinement**
+- `pos_best_v2_441pts` doit rester explicitement séparé
+
+Cette distinction est obligatoire pour la clarté scientifique et la traçabilité du dépôt.
+
+---
+
+*Tridom — Comparaison bloc de référence vs targeted multi-patches — 2026-04*
