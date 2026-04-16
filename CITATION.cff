@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as follows."
+title: "Tridom — A Minimal Signed Triadic Unit for Substrate-Aware Network Dynamics"
+type: software
+version: "0.5.1"
+date-released: 2026-04-16
+authors:
+  - family-names: "Faihy"
+    given-names: "Jean-Paul"
+    orcid: "https://orcid.org/0009-0007-5990-3588"
+license: "MIT"
+repository-code: "https://github.com/jpfai/tridom"
+url: "https://github.com/jpfai/tridom"
+abstract: >-
+  Tridom is a conceptual and computational research program centered on the
+  hypothesis that the signed triadic level constitutes a minimal grain at which
+  non-trivial causal organization becomes accessible in a strong sense. Version
+  0.5.1 consolidates the repository around a clarified canonical structure and a
+  complete publication of the current targeted refinement branch. The canonical
+  reference block is v3.3bis_vps_reference_7nuclei (1225 points, B = 25, B<0 = 9).
+  The canonical targeted branch is multi_patch_500pts (4 selected centers, 500
+  unique points, B = 25, B<0 = 10). Compared with the reference block, the
+  targeted refinement preserves B = 25, increases B<0 from 9 to 10, raises
+  boundary density from 2.0% to 5.0%, and improves the best local Delta_mle
+  from 0.160 to 0.069. The current interpretation is that the boundary behaves
+  as a thick diagnostic transition zone rather than a single isolated critical
+  point.
+keywords:
+  - "triadic dynamics"
+  - "signed directed graphs"
+  - "network motifs"
+  - "substrate-aware dynamics"
+  - "causal organization"
+  - "boundary refinement"
+  - "Lyapunov analysis"
+  - "multistability"
+  - "oscillation"
+  - "chaos candidates"
+  - "computational dynamics"
+  - "complex systems"

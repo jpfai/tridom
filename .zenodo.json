@@ -1,0 +1,30 @@
+{
+  "title": "Tridom — A Minimal Signed Triadic Unit for Substrate-Aware Network Dynamics",
+  "version": "0.5.1",
+  "upload_type": "software",
+  "description": "Tridom is a conceptual and computational research program centered on the hypothesis that the signed triadic level constitutes a minimal grain at which non-trivial causal organization becomes accessible in a strong sense. Version 0.5.1 consolidates the repository around a clarified canonical structure and a complete publication of the current targeted refinement branch.\n\nCURRENT STATUS\n\nThe repository must now be read on three distinct scientific levels:\n\n1. v3.3_upstream\n   Initial global boundary scan.\n\n2. v3.3bis\n   - v3.3bis_preliminary_light\n   - v3.3bis_vps_reference_7nuclei ← current canonical reference block\n\n3. targeted refinement\n   - multi_patch_500pts ← current canonical targeted branch\n   - pos_best_v2_441pts ← separate local zoom, not to be conflated with the multi-patch run\n\nCANONICAL REFERENCE BLOCK\n\nThe current scientific reference is the block v3.3bis_vps_reference_7nuclei.\n\nMain facts:\n- total points: 1225\n- B = 25\n- B<0 = 9\n- UNSTABLE = 0\n\nCANONICAL TARGETED BRANCH\n\nThe current canonical targeted branch is multi_patch_500pts.\n\nIt is built from:\n- B_25points.csv\n- B_neg9points.csv\n\nthrough a targeted refinement plan with:\n- 4 selected centers\n- 500 unique explicit points\n\nMain facts:\n- total points: 500\n- B = 25\n- B<0 = 10\n\nCompared with the canonical reference block:\n- B count is preserved\n- B<0 increases from 9 to 10\n- boundary density increases from 2.0% to 5.0%\n- the best local robustness improves from Delta_mle = 0.160 to Delta_mle = 0.069\n\nBest targeted point:\n- P0218\n- patch: POS_BEST\n- coordinates: (10.698, 105.25, 2.475)\n\nCURRENT INTERPRETATION\n\nThe current reading retained in this version is the following:\n\nthe Tridom boundary is best interpreted as a thick diagnostic transition zone rather than as a single isolated critical point.\n\nThe targeted refinement does not overturn the reference reading. It confirms it, densifies it locally, increases access to negative-side candidates, and improves the best local robustness of the diagnostic.\n\nBRANCH DISTINCTION\n\nA crucial distinction is enforced in this version:\n- multi_patch_500pts is the canonical targeted refinement branch\n- pos_best_v2_441pts is a separate local zoom\n\nThese two branches must not be conflated.\n\nCONCEPTUAL FRAME\n\nTridom treats the three-node signed motif as an explicit causal minimal unit whose dynamical identity can survive substrate changes. A Tridom is defined by a strongly connected directed graph on three nodes, a binary sign pattern, and a qualitative dynamical class. Three levels of equivalence are distinguished: L1 (structural), L2 (regime), and L3 (conjugacy).\n\nThis release should be read as a consolidation milestone: archive clarified, canonical files published, targeted branch stabilized, documentation updated, and principal targeted execution script included.",
+  "creators": [
+    {
+      "name": "Faihy, Jean-Paul",
+      "orcid": "0009-0007-5990-3588",
+      "type": "ProjectMember"
+    }
+  ],
+  "license": "mit",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "triadic dynamics",
+    "signed directed graphs",
+    "network motifs",
+    "substrate-aware dynamics",
+    "causal organization",
+    "boundary refinement",
+    "Lyapunov analysis",
+    "multistability",
+    "oscillation",
+    "chaos candidates",
+    "computational dynamics",
+    "complex systems"
+  ]
+}
