@@ -1,0 +1,38 @@
+{
+  "mode": "targeted_refinement_from_B",
+  "source_files": {
+    "B_25points_csv": "B_25points.csv",
+    "B_neg9points_csv": "B_neg9points.csv"
+  },
+  "selection_policy": {
+    "center_1": "empirical_mean_of_B",
+    "center_2": "best_positive_B",
+    "negative_centers": "preferred NEG1 and NEG3 if present, otherwise best negative fallbacks"
+  },
+  "inferred_base_spacing": {
+    "sigma": 0.09669999999999845,
+    "rho": 0.5,
+    "beta": 0.05709999999999971
+  },
+  "patch_geometry": {
+    "halfwidth_factor": 1.0,
+    "microstep_divisor": 2.0,
+    "per_patch_nominal_shape": "5x5x5 when inferred spacing is regular"
+  },
+  "outputs": {
+    "refine_centers_csv": "refine_vps_targets\\refine_centers.csv",
+    "refine_points_csv": "refine_vps_targets\\refine_points.csv",
+    "refine_manifest_json": "refine_vps_targets\\refine_manifest.json"
+  },
+  "counts": {
+    "n_B_points": 25,
+    "n_B_negative_points": 9,
+    "n_selected_centers": 4,
+    "n_unique_refine_points": 500
+  },
+  "notes": [
+    "This script prepares a targeted parameter list only.",
+    "It does not evaluate the dynamical system by itself.",
+    "The resulting refine_points.csv should be consumed by a point-list execution mode in the existing evaluator."
+  ]
+}
