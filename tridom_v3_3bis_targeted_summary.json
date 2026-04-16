@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "mode": "vps",
+    "points_csv": ".\\refine_vps_targets\\refine_points.csv",
+    "config": {
+      "sigma_offsets": [
+        -0.4,
+        -0.2,
+        0.0,
+        0.2,
+        0.4
+      ],
+      "rho_offsets": [
+        -1.5,
+        -1.0,
+        -0.5,
+        0.0,
+        0.5,
+        1.0,
+        1.5
+      ],
+      "beta_offsets": [
+        -0.15,
+        -0.075,
+        0.0,
+        0.075,
+        0.15
+      ],
+      "n_ic": 8,
+      "burn_steps": 2500,
+      "measure_steps": 6000,
+      "tail_steps": 1200,
+      "renorm_grid": [
+        5,
+        10,
+        20
+      ],
+      "description": "stronger refinement"
+    },
+    "anchor": {
+      "name": "C2a",
+      "topo_idx": 41,
+      "perm": [
+        0,
+        1,
+        2
+      ],
+      "sigma": 10.0,
+      "rho": 99.6,
+      "beta": 2.6666666666666665
+    },
+    "nuclei": [
+      {
+        "id": "CSV_TARGETED",
+        "sigma": 10.250599000000001,
+        "rho": 102.337827,
+        "beta": 2.5157130000000003,
+        "kind": "targeted_csv"
+      }
+    ]
+  },
+  "nuclei": {
+    "CSV_TARGETED": {
+      "nucleus_id": "CSV_TARGETED",
+      "nucleus_kind": "targeted_csv",
+      "source_mode": "points_csv",
+      "center_sigma": 10.250599000000001,
+      "center_rho": 102.337827,
+      "center_beta": 2.5157130000000003,
+      "n_center_groups": 4,
+      "n_points": 500,
+      "A_count": 60,
+      "B_count": 25,
+      "C_count": 340,
+      "B_negative_count": 10,
+      "CHAOS_STRONG": 96,
+      "CHAOS_WEAK": 3,
+      "BORDER": 400,
+      "OSCILLATORY": 1,
+      "UNSTABLE": 0,
+      "B_center_sigma": 10.37133368,
+      "B_center_rho": 102.94810464,
+      "B_center_beta": 2.5197321599999998
+    }
+  }
+}

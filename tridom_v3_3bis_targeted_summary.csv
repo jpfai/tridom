@@ -1,0 +1,2 @@
+nucleus_id,nucleus_kind,source_mode,center_sigma,center_rho,center_beta,n_center_groups,n_points,A_count,B_count,C_count,B_negative_count,CHAOS_STRONG,CHAOS_WEAK,BORDER,OSCILLATORY,UNSTABLE,B_center_sigma,B_center_rho,B_center_beta
+CSV_TARGETED,targeted_csv,points_csv,10.250599000000001,102.337827,2.5157130000000003,4,500,60,25,340,10,96,3,400,1,0,10.37133368,102.94810464,2.5197321599999998
