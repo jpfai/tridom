@@ -26,7 +26,7 @@ python tridom_v3_3bis_targeted.py --mode vps --points-csv refine_vps_targets/ref
 | patch_label | patch_source | Centre |
 |---|---|---|
 | B_CENTER_EMPIRICAL | empirical_mean_of_B | (10.152, 101.851, 2.563) — global B vps |
-| POS_BEST | NEG4 best Δmle | (9.95, 98.0, 2.4) |
+| POS_BEST | best_positive_B | (10.65, 105.0, 2.475) |
 | NEG_NEG1 | NEG1 best neg | (9.55, 99.0, 2.475) |
 | NEG_NEG3 | NEG3 best neg | (10.65, 103.5, 2.55) |
 
@@ -185,6 +185,10 @@ Raffinement ciblé suivant : zoom sur POS_BEST, centre (10.698, 105.0, 2.490), a
 ## 10. Formulation courte de reprise
 
 > `v3.3bis-targeted` a exploré 500 points en 4 patches de 125, centrés sur les meilleurs candidats du run vps. B=25 et B<0=10 confirment la persistance de la frontière. La densité B est 2.5× supérieure au run vps global. Le point le plus robuste (Δmle=0.069) est dans le patch POS_BEST. La frontière reste une zone critique épaisse, diagnostiquement instable, avec un signal de robustesse croissant à chaque raffinement.
+
+---
+
+> **Correction (2026-04-29):** An earlier version of this report incorrectly listed the POS_BEST patch center as (9.95, 98.0, 2.4) with source "NEG4 best Δmle". The canonical targeted CSV (`refine_centers.csv`) and refinement plan use POS_BEST = (10.65, 105.0, 2.475) with source `best_positive_B`, which is the correct center for the published targeted branch. The raw CSV, refinement points, and computed results were unaffected — this was an editorial error in the report table only.
 
 ---
 
